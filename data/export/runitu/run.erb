@@ -3,4 +3,4 @@ set -e
 
 exec 2>&1
 cd <%= engine.root %>
-exec -e <%= File.join(location, "#{process_directory}/env") %> <%= process.command %>
+exec chpst -e <%= File.join(location, "#{process_directory}/env") %> <%= process.command %>

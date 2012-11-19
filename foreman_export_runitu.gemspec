@@ -3,7 +3,7 @@ require "foreman/version"
 
 Gem::Specification.new do |gem|
   gem.name     = "foreman_export_runitu"
-  gem.version  = "0.0.1"
+  gem.version  = "0.0.2"
 
   gem.author   = "Dmitry Galisnky"
   gem.email    = "dima.exe@gmail.com"
