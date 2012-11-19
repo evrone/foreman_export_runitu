@@ -5,9 +5,14 @@ class Foreman::Export::Runitu < Foreman::Export::Base
 
   ENV_VARIABLE_REGEX = /([a-zA-Z_]+[a-zA-Z0-9_]*)=(\S+)/
 
-  def export
-    super
+   def export_from_base
+     error("Must specify a location") unless location
+     FileUtils.mkdir_p(location) rescue error("Could not create: #{location}")
+     FileUtils.mkdir_p(log) rescue error("Could not create: #{log}")
+     #FileUtils.chown(user, nil, log) rescue error("Could not chown #{log} to #{user}")
+   end
 
+  def export
     engine.each_process do |name, process|
       1.upto(engine.formation[name]) do |num|
         process_directory = "#{app}-#{name}-#{num}"
