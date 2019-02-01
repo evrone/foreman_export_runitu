@@ -1,3 +1,4 @@
+# PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED
 # Foreman export runitu
 
 Foreman exporter to runit, unlike original runit exporter, does it without sudo
